@@ -1,0 +1,90 @@
+C:\SUDH\ISP\NServiceBus\MultiplePubSubQueuing\Subscriber2\obj\Debug\Subscriber2.csprojResolveAssemblyReference.cache
+C:\SUDH\ISP\NServiceBus\MultiplePubSubQueuing\Subscriber2\bin\Debug\Subscriber2.dll.config
+C:\SUDH\ISP\NServiceBus\MultiplePubSubQueuing\Subscriber2\bin\Debug\Subscriber2.dll
+C:\SUDH\ISP\NServiceBus\MultiplePubSubQueuing\Subscriber2\bin\Debug\Subscriber2.pdb
+C:\SUDH\ISP\NServiceBus\MultiplePubSubQueuing\Subscriber2\bin\Debug\NServiceBus.Core.dll
+C:\SUDH\ISP\NServiceBus\MultiplePubSubQueuing\Subscriber2\bin\Debug\NServiceBus.RavenDB.dll
+C:\SUDH\ISP\NServiceBus\MultiplePubSubQueuing\Subscriber2\bin\Debug\NServiceBus.Transports.RabbitMQ.dll
+C:\SUDH\ISP\NServiceBus\MultiplePubSubQueuing\Subscriber2\bin\Debug\RabbitMQ.Client.dll
+C:\SUDH\ISP\NServiceBus\MultiplePubSubQueuing\Subscriber2\bin\Debug\Raven.Abstractions.dll
+C:\SUDH\ISP\NServiceBus\MultiplePubSubQueuing\Subscriber2\bin\Debug\Raven.Client.Lightweight.dll
+C:\SUDH\ISP\NServiceBus\MultiplePubSubQueuing\Subscriber2\bin\Debug\Shared.dll
+C:\SUDH\ISP\NServiceBus\MultiplePubSubQueuing\Subscriber2\bin\Debug\Shared.pdb
+C:\SUDH\ISP\NServiceBus\MultiplePubSubQueuing\Subscriber2\bin\Debug\NServiceBus.Core.pdb
+C:\SUDH\ISP\NServiceBus\MultiplePubSubQueuing\Subscriber2\bin\Debug\NServiceBus.Core.xml
+C:\SUDH\ISP\NServiceBus\MultiplePubSubQueuing\Subscriber2\bin\Debug\NServiceBus.RavenDB.pdb
+C:\SUDH\ISP\NServiceBus\MultiplePubSubQueuing\Subscriber2\bin\Debug\NServiceBus.RavenDB.xml
+C:\SUDH\ISP\NServiceBus\MultiplePubSubQueuing\Subscriber2\bin\Debug\NServiceBus.Transports.RabbitMQ.pdb
+C:\SUDH\ISP\NServiceBus\MultiplePubSubQueuing\Subscriber2\bin\Debug\NServiceBus.Transports.RabbitMQ.xml
+C:\SUDH\ISP\NServiceBus\MultiplePubSubQueuing\Subscriber2\bin\Debug\RabbitMQ.Client.xml
+C:\SUDH\ISP\NServiceBus\MultiplePubSubQueuing\Subscriber2\bin\Debug\Raven.Abstractions.pdb
+C:\SUDH\ISP\NServiceBus\MultiplePubSubQueuing\Subscriber2\bin\Debug\Raven.Abstractions.xml
+C:\SUDH\ISP\NServiceBus\MultiplePubSubQueuing\Subscriber2\bin\Debug\Raven.Client.Lightweight.pdb
+C:\SUDH\ISP\NServiceBus\MultiplePubSubQueuing\Subscriber2\bin\Debug\Raven.Client.Lightweight.xml
+C:\SUDH\ISP\NServiceBus\MultiplePubSubQueuing\Subscriber2\obj\Debug\Subscriber2.dll
+C:\SUDH\ISP\NServiceBus\MultiplePubSubQueuing\Subscriber2\obj\Debug\Subscriber2.pdb
+C:\SUDH\ISP\NServiceBus\MultiplePubSubQueuing\Subscriber2\bin\Debug\NServiceBus.Host.exe
+C:\SUDH\ISP\NServiceBus\MultiplePubSubQueuing\Subscriber2\bin\Debug\NServiceBus.Host.pdb
+C:\SUDH\ISP\NServiceBus\MultiplePubSubQueuing\Subscriber2\bin\Debug\NServiceBus.Host.xml
+C:\SUDH\ISP\NServiceBus\MultiplePubSubQueuing - Copy\Subscriber2\bin\Debug\Subscriber2.dll.config
+C:\SUDH\ISP\NServiceBus\MultiplePubSubQueuing - Copy\Subscriber2\bin\Debug\Subscriber2.dll
+C:\SUDH\ISP\NServiceBus\MultiplePubSubQueuing - Copy\Subscriber2\bin\Debug\Subscriber2.pdb
+C:\SUDH\ISP\NServiceBus\MultiplePubSubQueuing - Copy\Subscriber2\bin\Debug\NServiceBus.Core.dll
+C:\SUDH\ISP\NServiceBus\MultiplePubSubQueuing - Copy\Subscriber2\bin\Debug\NServiceBus.Host.exe
+C:\SUDH\ISP\NServiceBus\MultiplePubSubQueuing - Copy\Subscriber2\bin\Debug\NServiceBus.RavenDB.dll
+C:\SUDH\ISP\NServiceBus\MultiplePubSubQueuing - Copy\Subscriber2\bin\Debug\NServiceBus.Transports.RabbitMQ.dll
+C:\SUDH\ISP\NServiceBus\MultiplePubSubQueuing - Copy\Subscriber2\bin\Debug\RabbitMQ.Client.dll
+C:\SUDH\ISP\NServiceBus\MultiplePubSubQueuing - Copy\Subscriber2\bin\Debug\Raven.Abstractions.dll
+C:\SUDH\ISP\NServiceBus\MultiplePubSubQueuing - Copy\Subscriber2\bin\Debug\Raven.Client.Lightweight.dll
+C:\SUDH\ISP\NServiceBus\MultiplePubSubQueuing - Copy\Subscriber2\bin\Debug\Shared.dll
+C:\SUDH\ISP\NServiceBus\MultiplePubSubQueuing - Copy\Subscriber2\bin\Debug\Shared.pdb
+C:\SUDH\ISP\NServiceBus\MultiplePubSubQueuing - Copy\Subscriber2\bin\Debug\NServiceBus.Core.pdb
+C:\SUDH\ISP\NServiceBus\MultiplePubSubQueuing - Copy\Subscriber2\bin\Debug\NServiceBus.Core.xml
+C:\SUDH\ISP\NServiceBus\MultiplePubSubQueuing - Copy\Subscriber2\bin\Debug\NServiceBus.Host.pdb
+C:\SUDH\ISP\NServiceBus\MultiplePubSubQueuing - Copy\Subscriber2\bin\Debug\NServiceBus.Host.xml
+C:\SUDH\ISP\NServiceBus\MultiplePubSubQueuing - Copy\Subscriber2\bin\Debug\NServiceBus.RavenDB.pdb
+C:\SUDH\ISP\NServiceBus\MultiplePubSubQueuing - Copy\Subscriber2\bin\Debug\NServiceBus.RavenDB.xml
+C:\SUDH\ISP\NServiceBus\MultiplePubSubQueuing - Copy\Subscriber2\bin\Debug\NServiceBus.Transports.RabbitMQ.pdb
+C:\SUDH\ISP\NServiceBus\MultiplePubSubQueuing - Copy\Subscriber2\bin\Debug\NServiceBus.Transports.RabbitMQ.xml
+C:\SUDH\ISP\NServiceBus\MultiplePubSubQueuing - Copy\Subscriber2\bin\Debug\RabbitMQ.Client.xml
+C:\SUDH\ISP\NServiceBus\MultiplePubSubQueuing - Copy\Subscriber2\bin\Debug\Raven.Abstractions.pdb
+C:\SUDH\ISP\NServiceBus\MultiplePubSubQueuing - Copy\Subscriber2\bin\Debug\Raven.Abstractions.xml
+C:\SUDH\ISP\NServiceBus\MultiplePubSubQueuing - Copy\Subscriber2\bin\Debug\Raven.Client.Lightweight.pdb
+C:\SUDH\ISP\NServiceBus\MultiplePubSubQueuing - Copy\Subscriber2\bin\Debug\Raven.Client.Lightweight.xml
+C:\SUDH\ISP\NServiceBus\MultiplePubSubQueuing - Copy\Subscriber2\obj\Debug\Subscriber2.dll
+C:\SUDH\ISP\NServiceBus\MultiplePubSubQueuing - Copy\Subscriber2\obj\Debug\Subscriber2.pdb
+C:\SUDH\ISP\NServiceBus\MultiplePubSubQueuing - Copy - Copy\Subscriber2\bin\Debug\Subscriber2.dll.config
+C:\SUDH\ISP\NServiceBus\MultiplePubSubQueuing - Copy - Copy\Subscriber2\bin\Debug\Subscriber2.dll
+C:\SUDH\ISP\NServiceBus\MultiplePubSubQueuing - Copy - Copy\Subscriber2\bin\Debug\Subscriber2.pdb
+C:\SUDH\ISP\NServiceBus\MultiplePubSubQueuing - Copy - Copy\Subscriber2\bin\Debug\Iesi.Collections.dll
+C:\SUDH\ISP\NServiceBus\MultiplePubSubQueuing - Copy - Copy\Subscriber2\bin\Debug\NHibernate.dll
+C:\SUDH\ISP\NServiceBus\MultiplePubSubQueuing - Copy - Copy\Subscriber2\bin\Debug\NServiceBus.Core.dll
+C:\SUDH\ISP\NServiceBus\MultiplePubSubQueuing - Copy - Copy\Subscriber2\bin\Debug\NServiceBus.Host.exe
+C:\SUDH\ISP\NServiceBus\MultiplePubSubQueuing - Copy - Copy\Subscriber2\bin\Debug\NServiceBus.NHibernate.dll
+C:\SUDH\ISP\NServiceBus\MultiplePubSubQueuing - Copy - Copy\Subscriber2\bin\Debug\NServiceBus.RavenDB.dll
+C:\SUDH\ISP\NServiceBus\MultiplePubSubQueuing - Copy - Copy\Subscriber2\bin\Debug\NServiceBus.Transports.RabbitMQ.dll
+C:\SUDH\ISP\NServiceBus\MultiplePubSubQueuing - Copy - Copy\Subscriber2\bin\Debug\RabbitMQ.Client.dll
+C:\SUDH\ISP\NServiceBus\MultiplePubSubQueuing - Copy - Copy\Subscriber2\bin\Debug\Raven.Abstractions.dll
+C:\SUDH\ISP\NServiceBus\MultiplePubSubQueuing - Copy - Copy\Subscriber2\bin\Debug\Raven.Client.Lightweight.dll
+C:\SUDH\ISP\NServiceBus\MultiplePubSubQueuing - Copy - Copy\Subscriber2\bin\Debug\Shared.dll
+C:\SUDH\ISP\NServiceBus\MultiplePubSubQueuing - Copy - Copy\Subscriber2\bin\Debug\Shared.pdb
+C:\SUDH\ISP\NServiceBus\MultiplePubSubQueuing - Copy - Copy\Subscriber2\bin\Debug\Iesi.Collections.xml
+C:\SUDH\ISP\NServiceBus\MultiplePubSubQueuing - Copy - Copy\Subscriber2\bin\Debug\NHibernate.xml
+C:\SUDH\ISP\NServiceBus\MultiplePubSubQueuing - Copy - Copy\Subscriber2\bin\Debug\NServiceBus.Core.pdb
+C:\SUDH\ISP\NServiceBus\MultiplePubSubQueuing - Copy - Copy\Subscriber2\bin\Debug\NServiceBus.Core.xml
+C:\SUDH\ISP\NServiceBus\MultiplePubSubQueuing - Copy - Copy\Subscriber2\bin\Debug\NServiceBus.Host.pdb
+C:\SUDH\ISP\NServiceBus\MultiplePubSubQueuing - Copy - Copy\Subscriber2\bin\Debug\NServiceBus.Host.xml
+C:\SUDH\ISP\NServiceBus\MultiplePubSubQueuing - Copy - Copy\Subscriber2\bin\Debug\NServiceBus.NHibernate.pdb
+C:\SUDH\ISP\NServiceBus\MultiplePubSubQueuing - Copy - Copy\Subscriber2\bin\Debug\NServiceBus.NHibernate.xml
+C:\SUDH\ISP\NServiceBus\MultiplePubSubQueuing - Copy - Copy\Subscriber2\bin\Debug\NServiceBus.RavenDB.pdb
+C:\SUDH\ISP\NServiceBus\MultiplePubSubQueuing - Copy - Copy\Subscriber2\bin\Debug\NServiceBus.RavenDB.xml
+C:\SUDH\ISP\NServiceBus\MultiplePubSubQueuing - Copy - Copy\Subscriber2\bin\Debug\NServiceBus.Transports.RabbitMQ.pdb
+C:\SUDH\ISP\NServiceBus\MultiplePubSubQueuing - Copy - Copy\Subscriber2\bin\Debug\NServiceBus.Transports.RabbitMQ.xml
+C:\SUDH\ISP\NServiceBus\MultiplePubSubQueuing - Copy - Copy\Subscriber2\bin\Debug\RabbitMQ.Client.xml
+C:\SUDH\ISP\NServiceBus\MultiplePubSubQueuing - Copy - Copy\Subscriber2\bin\Debug\Raven.Abstractions.pdb
+C:\SUDH\ISP\NServiceBus\MultiplePubSubQueuing - Copy - Copy\Subscriber2\bin\Debug\Raven.Abstractions.xml
+C:\SUDH\ISP\NServiceBus\MultiplePubSubQueuing - Copy - Copy\Subscriber2\bin\Debug\Raven.Client.Lightweight.pdb
+C:\SUDH\ISP\NServiceBus\MultiplePubSubQueuing - Copy - Copy\Subscriber2\bin\Debug\Raven.Client.Lightweight.xml
+C:\SUDH\ISP\NServiceBus\MultiplePubSubQueuing - Copy - Copy\Subscriber2\obj\Debug\Subscriber2.csprojResolveAssemblyReference.cache
+C:\SUDH\ISP\NServiceBus\MultiplePubSubQueuing - Copy - Copy\Subscriber2\obj\Debug\Subscriber2.dll
+C:\SUDH\ISP\NServiceBus\MultiplePubSubQueuing - Copy - Copy\Subscriber2\obj\Debug\Subscriber2.pdb

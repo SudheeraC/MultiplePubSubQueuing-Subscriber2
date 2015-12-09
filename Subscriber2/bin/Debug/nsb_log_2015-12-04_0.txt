@@ -1,0 +1,658 @@
+﻿2015-12-04 16:05:06.144 INFO  DefaultFactory Logging to 'C:\SUDH\ISP\NServiceBus\MultiplePubSubQueuing - Copy - Copy\Subscriber2\bin\Debug\' with level Info
+2015-12-04 16:05:06.399 INFO  NServiceBus.Persistence.PersistenceStartup Activating persistence 'NHibernatePersistence' to provide storage for 'NServiceBus.Persistence.StorageType+GatewayDeduplication' storage.
+2015-12-04 16:05:06.401 INFO  NServiceBus.Persistence.PersistenceStartup Activating persistence 'NHibernatePersistence' to provide storage for 'NServiceBus.Persistence.StorageType+Outbox' storage.
+2015-12-04 16:05:06.404 INFO  NServiceBus.Persistence.PersistenceStartup Activating persistence 'NHibernatePersistence' to provide storage for 'NServiceBus.Persistence.StorageType+Timeouts' storage.
+2015-12-04 16:05:06.406 INFO  NServiceBus.Persistence.PersistenceStartup Activating persistence 'NHibernatePersistence' to provide storage for 'NServiceBus.Persistence.StorageType+Subscriptions' storage.
+2015-12-04 16:05:06.409 INFO  NServiceBus.Persistence.PersistenceStartup Activating persistence 'NHibernatePersistence' to provide storage for 'NServiceBus.Persistence.StorageType+Sagas' storage.
+2015-12-04 16:05:07.121 INFO  NServiceBus.Licensing.LicenseManager Expires on 12/23/2015 12:00:00 AM
+2015-12-04 16:05:07.186 INFO  NServiceBus.Features.UnicastBus Number of messages found: 2
+2015-12-04 16:05:07.376 ERROR NServiceBus.GenericHost Exception when starting endpoint.
+System.InvalidOperationException: No NHibernate properties found in your config file (C:\SUDH\ISP\NServiceBus\MultiplePubSubQueuing - Copy - Copy\Subscriber2\bin\Debug\Subscriber2.dll.config).
+
+To run NServiceBus with NHibernate you need to at least specify the database connectionstring.
+Here is an example of what is required:
+  <appSettings>
+    <!-- dialect is defaulted to MsSql2008Dialect, if needed change accordingly -->
+    <add key="NServiceBus/Persistence/NHibernate/dialect" value="NHibernate.Dialect.{your dialect}"/>
+
+    <!-- other optional settings examples -->
+    <add key="NServiceBus/Persistence/NHibernate/connection.provider" value="NHibernate.Connection.DriverConnectionProvider"/>
+    <add key="NServiceBus/Persistence/NHibernate/connection.driver_class" value="NHibernate.Driver.Sql2008ClientDriver"/>
+    <!-- For more setting see http://www.nhforge.org/doc/nh/en/#configuration-hibernatejdbc and http://www.nhforge.org/doc/nh/en/#configuration-optional -->
+  </appSettings>
+  
+  <connectionStrings>
+    <!-- Default connection string for all NHibernate/Sql persisters -->
+    <add name="NServiceBus/Persistence" connectionString="Data Source=.\SQLEXPRESS;Initial Catalog=nservicebus;Integrated Security=True" />
+    
+    <!-- Optional overrides per persister -->
+    <add name="NServiceBus/Persistence/NHibernate/Timeout" connectionString="Data Source=.\SQLEXPRESS;Initial Catalog=timeout;Integrated Security=True" />
+    <add name="NServiceBus/Persistence/NHibernate/Saga" connectionString="Data Source=.\SQLEXPRESS;Initial Catalog=sagas;Integrated Security=True" />
+    <add name="NServiceBus/Persistence/NHibernate/Subscription" connectionString="Data Source=.\SQLEXPRESS;Initial Catalog=subscription;Integrated Security=True" />
+    <add name="NServiceBus/Persistence/NHibernate/Deduplication" connectionString="Data Source=.\SQLEXPRESS;Initial Catalog=gateway;Integrated Security=True" />
+    <add name="NServiceBus/Persistence/NHibernate/Distributor" connectionString="Data Source=.\SQLEXPRESS;Initial Catalog=distributor;Integrated Security=True" />
+  </connectionStrings>
+   at NServiceBus.Persistence.NHibernate.ConfigureNHibernate.ThrowIfRequiredPropertiesAreMissing(IDictionary`2 props) in C:\BuildAgent\work\5135de308b2f3016\src\NServiceBus.NHibernate\Internal\ConfigureNHibernate.cs:line 173
+   at NServiceBus.Features.NHibernateStorageSession.Setup(FeatureConfigurationContext context) in C:\BuildAgent\work\5135de308b2f3016\src\NServiceBus.NHibernate\SharedSession\NHibernateStorageSession.cs:line 35
+   at NServiceBus.Features.Feature.SetupFeature(FeatureConfigurationContext config) in C:\BuildAgent\work\3206e2123f54fce4\src\NServiceBus.Core\Features\Feature.cs:line 203
+   at NServiceBus.Features.FeatureActivator.ActivateFeature(FeatureState featureState, IEnumerable`1 featuresToActivate, FeatureConfigurationContext context) in C:\BuildAgent\work\3206e2123f54fce4\src\NServiceBus.Core\Features\FeatureActivator.cs:line 233
+   at NServiceBus.Features.FeatureActivator.SetupFeatures(FeatureConfigurationContext context) in C:\BuildAgent\work\3206e2123f54fce4\src\NServiceBus.Core\Features\FeatureActivator.cs:line 116
+   at NServiceBus.Configure.Initialize() in C:\BuildAgent\work\3206e2123f54fce4\src\NServiceBus.Core\Configure.cs:line 115
+   at NServiceBus.Bus.Create(BusConfiguration configuration) in C:\BuildAgent\work\3206e2123f54fce4\src\NServiceBus.Core\Bus.cs:line 21
+   at NServiceBus.GenericHost.PerformConfiguration(Action`1 moreConfiguration) in c:\BuildAgent\work\a3de8759ee491634\src\NServiceBus.Hosting.Windows\GenericHost.cs:line 121
+   at NServiceBus.GenericHost.Start() in c:\BuildAgent\work\a3de8759ee491634\src\NServiceBus.Hosting.Windows\GenericHost.cs:line 58
+2015-12-04 16:08:39.678 INFO  DefaultFactory Logging to 'C:\SUDH\ISP\NServiceBus\MultiplePubSubQueuing - Copy - Copy\Subscriber2\bin\Debug\' with level Info
+2015-12-04 16:08:40.100 INFO  NServiceBus.Persistence.PersistenceStartup Activating persistence 'NHibernatePersistence' to provide storage for 'NServiceBus.Persistence.StorageType+GatewayDeduplication' storage.
+2015-12-04 16:08:40.103 INFO  NServiceBus.Persistence.PersistenceStartup Activating persistence 'NHibernatePersistence' to provide storage for 'NServiceBus.Persistence.StorageType+Outbox' storage.
+2015-12-04 16:08:40.106 INFO  NServiceBus.Persistence.PersistenceStartup Activating persistence 'NHibernatePersistence' to provide storage for 'NServiceBus.Persistence.StorageType+Timeouts' storage.
+2015-12-04 16:08:40.109 INFO  NServiceBus.Persistence.PersistenceStartup Activating persistence 'NHibernatePersistence' to provide storage for 'NServiceBus.Persistence.StorageType+Subscriptions' storage.
+2015-12-04 16:08:40.112 INFO  NServiceBus.Persistence.PersistenceStartup Activating persistence 'NHibernatePersistence' to provide storage for 'NServiceBus.Persistence.StorageType+Sagas' storage.
+2015-12-04 16:08:40.602 INFO  NServiceBus.Licensing.LicenseManager Expires on 12/23/2015 12:00:00 AM
+2015-12-04 16:08:40.667 INFO  NServiceBus.Features.UnicastBus Number of messages found: 2
+2015-12-04 16:08:40.832 ERROR NServiceBus.GenericHost Exception when starting endpoint.
+System.InvalidOperationException: No NHibernate properties found in your config file (C:\SUDH\ISP\NServiceBus\MultiplePubSubQueuing - Copy - Copy\Subscriber2\bin\Debug\Subscriber2.dll.config).
+
+To run NServiceBus with NHibernate you need to at least specify the database connectionstring.
+Here is an example of what is required:
+  <appSettings>
+    <!-- dialect is defaulted to MsSql2008Dialect, if needed change accordingly -->
+    <add key="NServiceBus/Persistence/NHibernate/dialect" value="NHibernate.Dialect.{your dialect}"/>
+
+    <!-- other optional settings examples -->
+    <add key="NServiceBus/Persistence/NHibernate/connection.provider" value="NHibernate.Connection.DriverConnectionProvider"/>
+    <add key="NServiceBus/Persistence/NHibernate/connection.driver_class" value="NHibernate.Driver.Sql2008ClientDriver"/>
+    <!-- For more setting see http://www.nhforge.org/doc/nh/en/#configuration-hibernatejdbc and http://www.nhforge.org/doc/nh/en/#configuration-optional -->
+  </appSettings>
+  
+  <connectionStrings>
+    <!-- Default connection string for all NHibernate/Sql persisters -->
+    <add name="NServiceBus/Persistence" connectionString="Data Source=.\SQLEXPRESS;Initial Catalog=nservicebus;Integrated Security=True" />
+    
+    <!-- Optional overrides per persister -->
+    <add name="NServiceBus/Persistence/NHibernate/Timeout" connectionString="Data Source=.\SQLEXPRESS;Initial Catalog=timeout;Integrated Security=True" />
+    <add name="NServiceBus/Persistence/NHibernate/Saga" connectionString="Data Source=.\SQLEXPRESS;Initial Catalog=sagas;Integrated Security=True" />
+    <add name="NServiceBus/Persistence/NHibernate/Subscription" connectionString="Data Source=.\SQLEXPRESS;Initial Catalog=subscription;Integrated Security=True" />
+    <add name="NServiceBus/Persistence/NHibernate/Deduplication" connectionString="Data Source=.\SQLEXPRESS;Initial Catalog=gateway;Integrated Security=True" />
+    <add name="NServiceBus/Persistence/NHibernate/Distributor" connectionString="Data Source=.\SQLEXPRESS;Initial Catalog=distributor;Integrated Security=True" />
+  </connectionStrings>
+   at NServiceBus.Persistence.NHibernate.ConfigureNHibernate.ThrowIfRequiredPropertiesAreMissing(IDictionary`2 props) in C:\BuildAgent\work\5135de308b2f3016\src\NServiceBus.NHibernate\Internal\ConfigureNHibernate.cs:line 173
+   at NServiceBus.Features.NHibernateStorageSession.Setup(FeatureConfigurationContext context) in C:\BuildAgent\work\5135de308b2f3016\src\NServiceBus.NHibernate\SharedSession\NHibernateStorageSession.cs:line 35
+   at NServiceBus.Features.Feature.SetupFeature(FeatureConfigurationContext config) in C:\BuildAgent\work\3206e2123f54fce4\src\NServiceBus.Core\Features\Feature.cs:line 203
+   at NServiceBus.Features.FeatureActivator.ActivateFeature(FeatureState featureState, IEnumerable`1 featuresToActivate, FeatureConfigurationContext context) in C:\BuildAgent\work\3206e2123f54fce4\src\NServiceBus.Core\Features\FeatureActivator.cs:line 233
+   at NServiceBus.Features.FeatureActivator.SetupFeatures(FeatureConfigurationContext context) in C:\BuildAgent\work\3206e2123f54fce4\src\NServiceBus.Core\Features\FeatureActivator.cs:line 116
+   at NServiceBus.Configure.Initialize() in C:\BuildAgent\work\3206e2123f54fce4\src\NServiceBus.Core\Configure.cs:line 115
+   at NServiceBus.Bus.Create(BusConfiguration configuration) in C:\BuildAgent\work\3206e2123f54fce4\src\NServiceBus.Core\Bus.cs:line 21
+   at NServiceBus.GenericHost.PerformConfiguration(Action`1 moreConfiguration) in c:\BuildAgent\work\a3de8759ee491634\src\NServiceBus.Hosting.Windows\GenericHost.cs:line 121
+   at NServiceBus.GenericHost.Start() in c:\BuildAgent\work\a3de8759ee491634\src\NServiceBus.Hosting.Windows\GenericHost.cs:line 58
+2015-12-04 17:03:31.723 INFO  DefaultFactory Logging to 'C:\SUDH\ISP\NServiceBus\MultiplePubSubQueuing - Copy - Copy\Subscriber2\bin\Debug\' with level Info
+2015-12-04 17:03:31.937 INFO  NServiceBus.Persistence.PersistenceStartup Activating persistence 'NHibernatePersistence' to provide storage for 'NServiceBus.Persistence.StorageType+GatewayDeduplication' storage.
+2015-12-04 17:03:31.940 INFO  NServiceBus.Persistence.PersistenceStartup Activating persistence 'NHibernatePersistence' to provide storage for 'NServiceBus.Persistence.StorageType+Outbox' storage.
+2015-12-04 17:03:31.943 INFO  NServiceBus.Persistence.PersistenceStartup Activating persistence 'NHibernatePersistence' to provide storage for 'NServiceBus.Persistence.StorageType+Timeouts' storage.
+2015-12-04 17:03:31.945 INFO  NServiceBus.Persistence.PersistenceStartup Activating persistence 'NHibernatePersistence' to provide storage for 'NServiceBus.Persistence.StorageType+Subscriptions' storage.
+2015-12-04 17:03:31.947 INFO  NServiceBus.Persistence.PersistenceStartup Activating persistence 'NHibernatePersistence' to provide storage for 'NServiceBus.Persistence.StorageType+Sagas' storage.
+2015-12-04 17:03:32.460 INFO  NServiceBus.Licensing.LicenseManager Expires on 12/23/2015 12:00:00 AM
+2015-12-04 17:03:32.527 INFO  NServiceBus.Features.UnicastBus Number of messages found: 2
+2015-12-04 17:03:32.753 ERROR NServiceBus.GenericHost Exception when starting endpoint.
+System.InvalidOperationException: No NHibernate properties found in your config file (C:\SUDH\ISP\NServiceBus\MultiplePubSubQueuing - Copy - Copy\Subscriber2\bin\Debug\Subscriber2.dll.config).
+
+To run NServiceBus with NHibernate you need to at least specify the database connectionstring.
+Here is an example of what is required:
+  <appSettings>
+    <!-- dialect is defaulted to MsSql2008Dialect, if needed change accordingly -->
+    <add key="NServiceBus/Persistence/NHibernate/dialect" value="NHibernate.Dialect.{your dialect}"/>
+
+    <!-- other optional settings examples -->
+    <add key="NServiceBus/Persistence/NHibernate/connection.provider" value="NHibernate.Connection.DriverConnectionProvider"/>
+    <add key="NServiceBus/Persistence/NHibernate/connection.driver_class" value="NHibernate.Driver.Sql2008ClientDriver"/>
+    <!-- For more setting see http://www.nhforge.org/doc/nh/en/#configuration-hibernatejdbc and http://www.nhforge.org/doc/nh/en/#configuration-optional -->
+  </appSettings>
+  
+  <connectionStrings>
+    <!-- Default connection string for all NHibernate/Sql persisters -->
+    <add name="NServiceBus/Persistence" connectionString="Data Source=.\SQLEXPRESS;Initial Catalog=nservicebus;Integrated Security=True" />
+    
+    <!-- Optional overrides per persister -->
+    <add name="NServiceBus/Persistence/NHibernate/Timeout" connectionString="Data Source=.\SQLEXPRESS;Initial Catalog=timeout;Integrated Security=True" />
+    <add name="NServiceBus/Persistence/NHibernate/Saga" connectionString="Data Source=.\SQLEXPRESS;Initial Catalog=sagas;Integrated Security=True" />
+    <add name="NServiceBus/Persistence/NHibernate/Subscription" connectionString="Data Source=.\SQLEXPRESS;Initial Catalog=subscription;Integrated Security=True" />
+    <add name="NServiceBus/Persistence/NHibernate/Deduplication" connectionString="Data Source=.\SQLEXPRESS;Initial Catalog=gateway;Integrated Security=True" />
+    <add name="NServiceBus/Persistence/NHibernate/Distributor" connectionString="Data Source=.\SQLEXPRESS;Initial Catalog=distributor;Integrated Security=True" />
+  </connectionStrings>
+   at NServiceBus.Persistence.NHibernate.ConfigureNHibernate.ThrowIfRequiredPropertiesAreMissing(IDictionary`2 props) in C:\BuildAgent\work\5135de308b2f3016\src\NServiceBus.NHibernate\Internal\ConfigureNHibernate.cs:line 173
+   at NServiceBus.Features.NHibernateStorageSession.Setup(FeatureConfigurationContext context) in C:\BuildAgent\work\5135de308b2f3016\src\NServiceBus.NHibernate\SharedSession\NHibernateStorageSession.cs:line 35
+   at NServiceBus.Features.Feature.SetupFeature(FeatureConfigurationContext config) in C:\BuildAgent\work\3206e2123f54fce4\src\NServiceBus.Core\Features\Feature.cs:line 203
+   at NServiceBus.Features.FeatureActivator.ActivateFeature(FeatureState featureState, IEnumerable`1 featuresToActivate, FeatureConfigurationContext context) in C:\BuildAgent\work\3206e2123f54fce4\src\NServiceBus.Core\Features\FeatureActivator.cs:line 233
+   at NServiceBus.Features.FeatureActivator.SetupFeatures(FeatureConfigurationContext context) in C:\BuildAgent\work\3206e2123f54fce4\src\NServiceBus.Core\Features\FeatureActivator.cs:line 116
+   at NServiceBus.Configure.Initialize() in C:\BuildAgent\work\3206e2123f54fce4\src\NServiceBus.Core\Configure.cs:line 115
+   at NServiceBus.Bus.Create(BusConfiguration configuration) in C:\BuildAgent\work\3206e2123f54fce4\src\NServiceBus.Core\Bus.cs:line 21
+   at NServiceBus.GenericHost.PerformConfiguration(Action`1 moreConfiguration) in c:\BuildAgent\work\a3de8759ee491634\src\NServiceBus.Hosting.Windows\GenericHost.cs:line 121
+   at NServiceBus.GenericHost.Start() in c:\BuildAgent\work\a3de8759ee491634\src\NServiceBus.Hosting.Windows\GenericHost.cs:line 58
+2015-12-04 17:05:09.109 INFO  DefaultFactory Logging to 'C:\SUDH\ISP\NServiceBus\MultiplePubSubQueuing - Copy - Copy\Subscriber2\bin\Debug\' with level Info
+2015-12-04 17:05:09.311 INFO  NServiceBus.Persistence.PersistenceStartup Activating persistence 'NHibernatePersistence' to provide storage for 'NServiceBus.Persistence.StorageType+GatewayDeduplication' storage.
+2015-12-04 17:05:09.313 INFO  NServiceBus.Persistence.PersistenceStartup Activating persistence 'NHibernatePersistence' to provide storage for 'NServiceBus.Persistence.StorageType+Outbox' storage.
+2015-12-04 17:05:09.316 INFO  NServiceBus.Persistence.PersistenceStartup Activating persistence 'NHibernatePersistence' to provide storage for 'NServiceBus.Persistence.StorageType+Timeouts' storage.
+2015-12-04 17:05:09.318 INFO  NServiceBus.Persistence.PersistenceStartup Activating persistence 'NHibernatePersistence' to provide storage for 'NServiceBus.Persistence.StorageType+Subscriptions' storage.
+2015-12-04 17:05:09.321 INFO  NServiceBus.Persistence.PersistenceStartup Activating persistence 'NHibernatePersistence' to provide storage for 'NServiceBus.Persistence.StorageType+Sagas' storage.
+2015-12-04 17:05:09.815 INFO  NServiceBus.Licensing.LicenseManager Expires on 12/23/2015 12:00:00 AM
+2015-12-04 17:05:09.879 INFO  NServiceBus.Features.UnicastBus Number of messages found: 2
+2015-12-04 17:05:10.102 ERROR NServiceBus.GenericHost Exception when starting endpoint.
+System.InvalidOperationException: No NHibernate properties found in your config file (C:\SUDH\ISP\NServiceBus\MultiplePubSubQueuing - Copy - Copy\Subscriber2\bin\Debug\Subscriber2.dll.config).
+
+To run NServiceBus with NHibernate you need to at least specify the database connectionstring.
+Here is an example of what is required:
+  <appSettings>
+    <!-- dialect is defaulted to MsSql2008Dialect, if needed change accordingly -->
+    <add key="NServiceBus/Persistence/NHibernate/dialect" value="NHibernate.Dialect.{your dialect}"/>
+
+    <!-- other optional settings examples -->
+    <add key="NServiceBus/Persistence/NHibernate/connection.provider" value="NHibernate.Connection.DriverConnectionProvider"/>
+    <add key="NServiceBus/Persistence/NHibernate/connection.driver_class" value="NHibernate.Driver.Sql2008ClientDriver"/>
+    <!-- For more setting see http://www.nhforge.org/doc/nh/en/#configuration-hibernatejdbc and http://www.nhforge.org/doc/nh/en/#configuration-optional -->
+  </appSettings>
+  
+  <connectionStrings>
+    <!-- Default connection string for all NHibernate/Sql persisters -->
+    <add name="NServiceBus/Persistence" connectionString="Data Source=.\SQLEXPRESS;Initial Catalog=nservicebus;Integrated Security=True" />
+    
+    <!-- Optional overrides per persister -->
+    <add name="NServiceBus/Persistence/NHibernate/Timeout" connectionString="Data Source=.\SQLEXPRESS;Initial Catalog=timeout;Integrated Security=True" />
+    <add name="NServiceBus/Persistence/NHibernate/Saga" connectionString="Data Source=.\SQLEXPRESS;Initial Catalog=sagas;Integrated Security=True" />
+    <add name="NServiceBus/Persistence/NHibernate/Subscription" connectionString="Data Source=.\SQLEXPRESS;Initial Catalog=subscription;Integrated Security=True" />
+    <add name="NServiceBus/Persistence/NHibernate/Deduplication" connectionString="Data Source=.\SQLEXPRESS;Initial Catalog=gateway;Integrated Security=True" />
+    <add name="NServiceBus/Persistence/NHibernate/Distributor" connectionString="Data Source=.\SQLEXPRESS;Initial Catalog=distributor;Integrated Security=True" />
+  </connectionStrings>
+   at NServiceBus.Persistence.NHibernate.ConfigureNHibernate.ThrowIfRequiredPropertiesAreMissing(IDictionary`2 props) in C:\BuildAgent\work\5135de308b2f3016\src\NServiceBus.NHibernate\Internal\ConfigureNHibernate.cs:line 173
+   at NServiceBus.Features.NHibernateStorageSession.Setup(FeatureConfigurationContext context) in C:\BuildAgent\work\5135de308b2f3016\src\NServiceBus.NHibernate\SharedSession\NHibernateStorageSession.cs:line 35
+   at NServiceBus.Features.Feature.SetupFeature(FeatureConfigurationContext config) in C:\BuildAgent\work\3206e2123f54fce4\src\NServiceBus.Core\Features\Feature.cs:line 203
+   at NServiceBus.Features.FeatureActivator.ActivateFeature(FeatureState featureState, IEnumerable`1 featuresToActivate, FeatureConfigurationContext context) in C:\BuildAgent\work\3206e2123f54fce4\src\NServiceBus.Core\Features\FeatureActivator.cs:line 233
+   at NServiceBus.Features.FeatureActivator.SetupFeatures(FeatureConfigurationContext context) in C:\BuildAgent\work\3206e2123f54fce4\src\NServiceBus.Core\Features\FeatureActivator.cs:line 116
+   at NServiceBus.Configure.Initialize() in C:\BuildAgent\work\3206e2123f54fce4\src\NServiceBus.Core\Configure.cs:line 115
+   at NServiceBus.Bus.Create(BusConfiguration configuration) in C:\BuildAgent\work\3206e2123f54fce4\src\NServiceBus.Core\Bus.cs:line 21
+   at NServiceBus.GenericHost.PerformConfiguration(Action`1 moreConfiguration) in c:\BuildAgent\work\a3de8759ee491634\src\NServiceBus.Hosting.Windows\GenericHost.cs:line 121
+   at NServiceBus.GenericHost.Start() in c:\BuildAgent\work\a3de8759ee491634\src\NServiceBus.Hosting.Windows\GenericHost.cs:line 58
+2015-12-04 17:05:30.938 INFO  DefaultFactory Logging to 'C:\SUDH\ISP\NServiceBus\MultiplePubSubQueuing - Copy - Copy\Subscriber2\bin\Debug\' with level Info
+2015-12-04 17:05:31.205 INFO  NServiceBus.Persistence.PersistenceStartup Activating persistence 'NHibernatePersistence' to provide storage for 'NServiceBus.Persistence.StorageType+GatewayDeduplication' storage.
+2015-12-04 17:05:31.207 INFO  NServiceBus.Persistence.PersistenceStartup Activating persistence 'NHibernatePersistence' to provide storage for 'NServiceBus.Persistence.StorageType+Outbox' storage.
+2015-12-04 17:05:31.209 INFO  NServiceBus.Persistence.PersistenceStartup Activating persistence 'NHibernatePersistence' to provide storage for 'NServiceBus.Persistence.StorageType+Timeouts' storage.
+2015-12-04 17:05:31.211 INFO  NServiceBus.Persistence.PersistenceStartup Activating persistence 'NHibernatePersistence' to provide storage for 'NServiceBus.Persistence.StorageType+Subscriptions' storage.
+2015-12-04 17:05:31.213 INFO  NServiceBus.Persistence.PersistenceStartup Activating persistence 'NHibernatePersistence' to provide storage for 'NServiceBus.Persistence.StorageType+Sagas' storage.
+2015-12-04 17:05:31.742 INFO  NServiceBus.Licensing.LicenseManager Expires on 12/23/2015 12:00:00 AM
+2015-12-04 17:05:31.806 INFO  NServiceBus.Features.UnicastBus Number of messages found: 2
+2015-12-04 17:05:32.024 ERROR NServiceBus.GenericHost Exception when starting endpoint.
+System.InvalidOperationException: No NHibernate properties found in your config file (C:\SUDH\ISP\NServiceBus\MultiplePubSubQueuing - Copy - Copy\Subscriber2\bin\Debug\Subscriber2.dll.config).
+
+To run NServiceBus with NHibernate you need to at least specify the database connectionstring.
+Here is an example of what is required:
+  <appSettings>
+    <!-- dialect is defaulted to MsSql2008Dialect, if needed change accordingly -->
+    <add key="NServiceBus/Persistence/NHibernate/dialect" value="NHibernate.Dialect.{your dialect}"/>
+
+    <!-- other optional settings examples -->
+    <add key="NServiceBus/Persistence/NHibernate/connection.provider" value="NHibernate.Connection.DriverConnectionProvider"/>
+    <add key="NServiceBus/Persistence/NHibernate/connection.driver_class" value="NHibernate.Driver.Sql2008ClientDriver"/>
+    <!-- For more setting see http://www.nhforge.org/doc/nh/en/#configuration-hibernatejdbc and http://www.nhforge.org/doc/nh/en/#configuration-optional -->
+  </appSettings>
+  
+  <connectionStrings>
+    <!-- Default connection string for all NHibernate/Sql persisters -->
+    <add name="NServiceBus/Persistence" connectionString="Data Source=.\SQLEXPRESS;Initial Catalog=nservicebus;Integrated Security=True" />
+    
+    <!-- Optional overrides per persister -->
+    <add name="NServiceBus/Persistence/NHibernate/Timeout" connectionString="Data Source=.\SQLEXPRESS;Initial Catalog=timeout;Integrated Security=True" />
+    <add name="NServiceBus/Persistence/NHibernate/Saga" connectionString="Data Source=.\SQLEXPRESS;Initial Catalog=sagas;Integrated Security=True" />
+    <add name="NServiceBus/Persistence/NHibernate/Subscription" connectionString="Data Source=.\SQLEXPRESS;Initial Catalog=subscription;Integrated Security=True" />
+    <add name="NServiceBus/Persistence/NHibernate/Deduplication" connectionString="Data Source=.\SQLEXPRESS;Initial Catalog=gateway;Integrated Security=True" />
+    <add name="NServiceBus/Persistence/NHibernate/Distributor" connectionString="Data Source=.\SQLEXPRESS;Initial Catalog=distributor;Integrated Security=True" />
+  </connectionStrings>
+   at NServiceBus.Persistence.NHibernate.ConfigureNHibernate.ThrowIfRequiredPropertiesAreMissing(IDictionary`2 props) in C:\BuildAgent\work\5135de308b2f3016\src\NServiceBus.NHibernate\Internal\ConfigureNHibernate.cs:line 173
+   at NServiceBus.Features.NHibernateStorageSession.Setup(FeatureConfigurationContext context) in C:\BuildAgent\work\5135de308b2f3016\src\NServiceBus.NHibernate\SharedSession\NHibernateStorageSession.cs:line 35
+   at NServiceBus.Features.Feature.SetupFeature(FeatureConfigurationContext config) in C:\BuildAgent\work\3206e2123f54fce4\src\NServiceBus.Core\Features\Feature.cs:line 203
+   at NServiceBus.Features.FeatureActivator.ActivateFeature(FeatureState featureState, IEnumerable`1 featuresToActivate, FeatureConfigurationContext context) in C:\BuildAgent\work\3206e2123f54fce4\src\NServiceBus.Core\Features\FeatureActivator.cs:line 233
+   at NServiceBus.Features.FeatureActivator.SetupFeatures(FeatureConfigurationContext context) in C:\BuildAgent\work\3206e2123f54fce4\src\NServiceBus.Core\Features\FeatureActivator.cs:line 116
+   at NServiceBus.Configure.Initialize() in C:\BuildAgent\work\3206e2123f54fce4\src\NServiceBus.Core\Configure.cs:line 115
+   at NServiceBus.Bus.Create(BusConfiguration configuration) in C:\BuildAgent\work\3206e2123f54fce4\src\NServiceBus.Core\Bus.cs:line 21
+   at NServiceBus.GenericHost.PerformConfiguration(Action`1 moreConfiguration) in c:\BuildAgent\work\a3de8759ee491634\src\NServiceBus.Hosting.Windows\GenericHost.cs:line 121
+   at NServiceBus.GenericHost.Start() in c:\BuildAgent\work\a3de8759ee491634\src\NServiceBus.Hosting.Windows\GenericHost.cs:line 58
+2015-12-04 17:10:48.784 INFO  DefaultFactory Logging to 'C:\SUDH\ISP\NServiceBus\MultiplePubSubQueuing - Copy - Copy\Subscriber2\bin\Debug\' with level Info
+2015-12-04 17:10:49.044 INFO  NServiceBus.Persistence.PersistenceStartup Activating persistence 'NHibernatePersistence' to provide storage for 'NServiceBus.Persistence.StorageType+GatewayDeduplication' storage.
+2015-12-04 17:10:49.046 INFO  NServiceBus.Persistence.PersistenceStartup Activating persistence 'NHibernatePersistence' to provide storage for 'NServiceBus.Persistence.StorageType+Outbox' storage.
+2015-12-04 17:10:49.048 INFO  NServiceBus.Persistence.PersistenceStartup Activating persistence 'NHibernatePersistence' to provide storage for 'NServiceBus.Persistence.StorageType+Timeouts' storage.
+2015-12-04 17:10:49.050 INFO  NServiceBus.Persistence.PersistenceStartup Activating persistence 'NHibernatePersistence' to provide storage for 'NServiceBus.Persistence.StorageType+Subscriptions' storage.
+2015-12-04 17:10:49.052 INFO  NServiceBus.Persistence.PersistenceStartup Activating persistence 'NHibernatePersistence' to provide storage for 'NServiceBus.Persistence.StorageType+Sagas' storage.
+2015-12-04 17:10:49.612 INFO  NServiceBus.Licensing.LicenseManager Expires on 12/23/2015 12:00:00 AM
+2015-12-04 17:10:49.681 INFO  NServiceBus.Features.UnicastBus Number of messages found: 2
+2015-12-04 17:10:49.926 ERROR NServiceBus.GenericHost Exception when starting endpoint.
+System.InvalidOperationException: No NHibernate properties found in your config file (C:\SUDH\ISP\NServiceBus\MultiplePubSubQueuing - Copy - Copy\Subscriber2\bin\Debug\Subscriber2.dll.config).
+
+To run NServiceBus with NHibernate you need to at least specify the database connectionstring.
+Here is an example of what is required:
+  <appSettings>
+    <!-- dialect is defaulted to MsSql2008Dialect, if needed change accordingly -->
+    <add key="NServiceBus/Persistence/NHibernate/dialect" value="NHibernate.Dialect.{your dialect}"/>
+
+    <!-- other optional settings examples -->
+    <add key="NServiceBus/Persistence/NHibernate/connection.provider" value="NHibernate.Connection.DriverConnectionProvider"/>
+    <add key="NServiceBus/Persistence/NHibernate/connection.driver_class" value="NHibernate.Driver.Sql2008ClientDriver"/>
+    <!-- For more setting see http://www.nhforge.org/doc/nh/en/#configuration-hibernatejdbc and http://www.nhforge.org/doc/nh/en/#configuration-optional -->
+  </appSettings>
+  
+  <connectionStrings>
+    <!-- Default connection string for all NHibernate/Sql persisters -->
+    <add name="NServiceBus/Persistence" connectionString="Data Source=.\SQLEXPRESS;Initial Catalog=nservicebus;Integrated Security=True" />
+    
+    <!-- Optional overrides per persister -->
+    <add name="NServiceBus/Persistence/NHibernate/Timeout" connectionString="Data Source=.\SQLEXPRESS;Initial Catalog=timeout;Integrated Security=True" />
+    <add name="NServiceBus/Persistence/NHibernate/Saga" connectionString="Data Source=.\SQLEXPRESS;Initial Catalog=sagas;Integrated Security=True" />
+    <add name="NServiceBus/Persistence/NHibernate/Subscription" connectionString="Data Source=.\SQLEXPRESS;Initial Catalog=subscription;Integrated Security=True" />
+    <add name="NServiceBus/Persistence/NHibernate/Deduplication" connectionString="Data Source=.\SQLEXPRESS;Initial Catalog=gateway;Integrated Security=True" />
+    <add name="NServiceBus/Persistence/NHibernate/Distributor" connectionString="Data Source=.\SQLEXPRESS;Initial Catalog=distributor;Integrated Security=True" />
+  </connectionStrings>
+   at NServiceBus.Persistence.NHibernate.ConfigureNHibernate.ThrowIfRequiredPropertiesAreMissing(IDictionary`2 props) in C:\BuildAgent\work\5135de308b2f3016\src\NServiceBus.NHibernate\Internal\ConfigureNHibernate.cs:line 173
+   at NServiceBus.Features.NHibernateStorageSession.Setup(FeatureConfigurationContext context) in C:\BuildAgent\work\5135de308b2f3016\src\NServiceBus.NHibernate\SharedSession\NHibernateStorageSession.cs:line 35
+   at NServiceBus.Features.Feature.SetupFeature(FeatureConfigurationContext config) in C:\BuildAgent\work\3206e2123f54fce4\src\NServiceBus.Core\Features\Feature.cs:line 203
+   at NServiceBus.Features.FeatureActivator.ActivateFeature(FeatureState featureState, IEnumerable`1 featuresToActivate, FeatureConfigurationContext context) in C:\BuildAgent\work\3206e2123f54fce4\src\NServiceBus.Core\Features\FeatureActivator.cs:line 233
+   at NServiceBus.Features.FeatureActivator.SetupFeatures(FeatureConfigurationContext context) in C:\BuildAgent\work\3206e2123f54fce4\src\NServiceBus.Core\Features\FeatureActivator.cs:line 116
+   at NServiceBus.Configure.Initialize() in C:\BuildAgent\work\3206e2123f54fce4\src\NServiceBus.Core\Configure.cs:line 115
+   at NServiceBus.Bus.Create(BusConfiguration configuration) in C:\BuildAgent\work\3206e2123f54fce4\src\NServiceBus.Core\Bus.cs:line 21
+   at NServiceBus.GenericHost.PerformConfiguration(Action`1 moreConfiguration) in c:\BuildAgent\work\a3de8759ee491634\src\NServiceBus.Hosting.Windows\GenericHost.cs:line 121
+   at NServiceBus.GenericHost.Start() in c:\BuildAgent\work\a3de8759ee491634\src\NServiceBus.Hosting.Windows\GenericHost.cs:line 58
+2015-12-04 17:34:37.493 INFO  DefaultFactory Logging to 'C:\SUDH\ISP\NServiceBus\MultiplePubSubQueuing - Copy - Copy\Subscriber2\bin\Debug\' with level Info
+2015-12-04 17:34:37.696 INFO  NServiceBus.Persistence.PersistenceStartup Activating persistence 'NHibernatePersistence' to provide storage for 'NServiceBus.Persistence.StorageType+GatewayDeduplication' storage.
+2015-12-04 17:34:37.698 INFO  NServiceBus.Persistence.PersistenceStartup Activating persistence 'NHibernatePersistence' to provide storage for 'NServiceBus.Persistence.StorageType+Outbox' storage.
+2015-12-04 17:34:37.700 INFO  NServiceBus.Persistence.PersistenceStartup Activating persistence 'NHibernatePersistence' to provide storage for 'NServiceBus.Persistence.StorageType+Timeouts' storage.
+2015-12-04 17:34:37.702 INFO  NServiceBus.Persistence.PersistenceStartup Activating persistence 'NHibernatePersistence' to provide storage for 'NServiceBus.Persistence.StorageType+Subscriptions' storage.
+2015-12-04 17:34:37.704 INFO  NServiceBus.Persistence.PersistenceStartup Activating persistence 'NHibernatePersistence' to provide storage for 'NServiceBus.Persistence.StorageType+Sagas' storage.
+2015-12-04 17:34:38.197 INFO  NServiceBus.Licensing.LicenseManager Expires on 12/23/2015 12:00:00 AM
+2015-12-04 17:34:38.263 INFO  NServiceBus.Features.UnicastBus Number of messages found: 2
+2015-12-04 17:34:38.739 ERROR NServiceBus.GenericHost Exception when starting endpoint.
+NHibernate.HibernateException: Could not create the driver from NHibernate.Driver.Sql2012ClientDriver. ---> System.TypeLoadException: Could not load type NHibernate.Driver.Sql2012ClientDriver. Possible cause: no assembly name specified.
+   at NHibernate.Util.ReflectHelper.TypeFromAssembly(AssemblyQualifiedTypeName name, Boolean throwOnError)
+   at NHibernate.Util.ReflectHelper.ClassForName(String name)
+   at NHibernate.Connection.ConnectionProvider.ConfigureDriver(IDictionary`2 settings)
+   --- End of inner exception stack trace ---
+   at NHibernate.Connection.ConnectionProvider.ConfigureDriver(IDictionary`2 settings)
+   at NHibernate.Connection.ConnectionProvider.Configure(IDictionary`2 settings)
+   at NHibernate.Connection.ConnectionProviderFactory.NewConnectionProvider(IDictionary`2 settings)
+   at NHibernate.Cfg.SettingsFactory.BuildSettings(IDictionary`2 properties)
+   at NHibernate.Cfg.Configuration.BuildSettings()
+   at NHibernate.Cfg.Configuration.BuildSessionFactory()
+   at NServiceBus.Features.NHibernateStorageSession.Setup(FeatureConfigurationContext context) in C:\BuildAgent\work\5135de308b2f3016\src\NServiceBus.NHibernate\SharedSession\NHibernateStorageSession.cs:line 51
+   at NServiceBus.Features.Feature.SetupFeature(FeatureConfigurationContext config) in C:\BuildAgent\work\3206e2123f54fce4\src\NServiceBus.Core\Features\Feature.cs:line 203
+   at NServiceBus.Features.FeatureActivator.ActivateFeature(FeatureState featureState, IEnumerable`1 featuresToActivate, FeatureConfigurationContext context) in C:\BuildAgent\work\3206e2123f54fce4\src\NServiceBus.Core\Features\FeatureActivator.cs:line 233
+   at NServiceBus.Features.FeatureActivator.SetupFeatures(FeatureConfigurationContext context) in C:\BuildAgent\work\3206e2123f54fce4\src\NServiceBus.Core\Features\FeatureActivator.cs:line 116
+   at NServiceBus.Configure.Initialize() in C:\BuildAgent\work\3206e2123f54fce4\src\NServiceBus.Core\Configure.cs:line 115
+   at NServiceBus.Bus.Create(BusConfiguration configuration) in C:\BuildAgent\work\3206e2123f54fce4\src\NServiceBus.Core\Bus.cs:line 21
+   at NServiceBus.GenericHost.PerformConfiguration(Action`1 moreConfiguration) in c:\BuildAgent\work\a3de8759ee491634\src\NServiceBus.Hosting.Windows\GenericHost.cs:line 121
+   at NServiceBus.GenericHost.Start() in c:\BuildAgent\work\a3de8759ee491634\src\NServiceBus.Hosting.Windows\GenericHost.cs:line 58
+2015-12-04 17:35:42.577 INFO  DefaultFactory Logging to 'C:\SUDH\ISP\NServiceBus\MultiplePubSubQueuing - Copy - Copy\Subscriber2\bin\Debug\' with level Info
+2015-12-04 17:35:42.895 INFO  NServiceBus.Persistence.PersistenceStartup Activating persistence 'NHibernatePersistence' to provide storage for 'NServiceBus.Persistence.StorageType+Timeouts' storage.
+2015-12-04 17:35:42.898 INFO  NServiceBus.Persistence.PersistenceStartup Activating persistence 'NHibernatePersistence' to provide storage for 'NServiceBus.Persistence.StorageType+Subscriptions' storage.
+2015-12-04 17:35:42.900 INFO  NServiceBus.Persistence.PersistenceStartup Activating persistence 'NHibernatePersistence' to provide storage for 'NServiceBus.Persistence.StorageType+GatewayDeduplication' storage.
+2015-12-04 17:35:42.903 INFO  NServiceBus.Persistence.PersistenceStartup Activating persistence 'NHibernatePersistence' to provide storage for 'NServiceBus.Persistence.StorageType+Sagas' storage.
+2015-12-04 17:35:42.905 INFO  NServiceBus.Persistence.PersistenceStartup Activating persistence 'NHibernatePersistence' to provide storage for 'NServiceBus.Persistence.StorageType+Outbox' storage.
+2015-12-04 17:35:43.483 INFO  NServiceBus.Licensing.LicenseManager Expires on 12/23/2015 12:00:00 AM
+2015-12-04 17:35:43.560 INFO  NServiceBus.Features.UnicastBus Number of messages found: 2
+2015-12-04 17:35:46.783 WARN  NServiceBus.Transports.Msmq.MsmqQueueCreator Queue IE3BLT3VZ1N62\private$\Subscriber2 does not exist.
+2015-12-04 17:35:47.220 INFO  NServiceBus.Pipeline.StepRegistrationsCoordinator Registration 'OutboxDeduplication' specified in the insertbefore of the 'OpenSqlConnection' step does not exist!
+2015-12-04 17:35:47.223 INFO  NServiceBus.Pipeline.StepRegistrationsCoordinator Registration 'OutboxRecorder' specified in the insertbefore of the 'OpenNHibernateSession' step does not exist!
+2015-12-04 17:35:47.226 INFO  NServiceBus.Pipeline.StepRegistrationsCoordinator Registration 'InvokeSaga' specified in the insertbefore of the 'OpenNHibernateSession' step does not exist!
+2015-12-04 17:35:47.229 INFO  NServiceBus.Pipeline.StepRegistrationsCoordinator Registration 'OutboxDeduplication' specified in the insertafter of the 'OpenNHibernateSession' step does not exist!
+2015-12-04 17:35:47.245 WARN  NServiceBus.Transports.Msmq.MsmqQueueCreator Queue IE3BLT3VZ1N62\private$\Subscriber2.Timeouts does not exist.
+2015-12-04 17:35:47.631 WARN  NServiceBus.Transports.Msmq.MsmqQueueCreator Queue IE3BLT3VZ1N62\private$\Subscriber2.TimeoutsDispatcher does not exist.
+2015-12-04 17:35:47.947 ERROR NServiceBus.Transports.Msmq.MsmqQueueCreator Could not create queue Subscriber2.TimeoutsDispatcher@IE3BLT3VZ1N62 or check its existence. Processing will still continue.
+System.Messaging.MessageQueueException (0x80004005)
+   at System.Messaging.MessageQueue.SetPermissions(AccessControlList dacl)
+   at System.Messaging.MessageQueue.SetPermissions(String user, MessageQueueAccessRights rights, AccessControlEntryType entryType)
+   at NServiceBus.Transports.Msmq.MsmqQueueCreator.SetPermissionsForQueue(MessageQueue queue, String account) in C:\BuildAgent\work\3206e2123f54fce4\src\NServiceBus.Core\Transports\Msmq\MsmqQueueCreator.cs:line 109
+   at NServiceBus.Transports.Msmq.MsmqQueueCreator.CreateQueue(String queuePath, String account, Boolean transactional) in C:\BuildAgent\work\3206e2123f54fce4\src\NServiceBus.Core\Transports\Msmq\MsmqQueueCreator.cs:line 87
+   at NServiceBus.Transports.Msmq.MsmqQueueCreator.CreateQueueIfNecessary(Address address, String account) in C:\BuildAgent\work\3206e2123f54fce4\src\NServiceBus.Core\Transports\Msmq\MsmqQueueCreator.cs:line 58
+2015-12-04 17:35:47.954 WARN  NServiceBus.Transports.Msmq.MsmqQueueCreator Queue IE3BLT3VZ1N62\private$\Subscriber2.Retries does not exist.
+2015-12-04 17:35:48.432 INFO  NServiceBus.PerformanceMonitorUsersInstaller Skipped adding user 'PACRIM1\h142020' to group 'Performance Monitor Users' because the user is already in group.
+2015-12-04 17:35:48.447 INFO  NServiceBus.Features.DisplayDiagnosticsForFeatures ------------- FEATURES ----------------
+Name: CriticalErrorHandling
+Version: 5.2.8
+Enabled by Default: Yes
+Status: Enabled
+Dependencies: None
+Startup Tasks: None
+
+Name: CustomIDataBus
+Version: 5.2.8
+Enabled by Default: No
+Status: Disabled
+Deactivation reason: Did not meet one of the dependencies: [DataBus]
+
+Name: DataBus
+Version: 5.2.8
+Enabled by Default: Yes
+Status: Disabled
+Deactivation reason: Did not fulfill its Prerequisites:
+   -No databus properties was found in available messages
+
+Name: Encryptor
+Version: 5.2.8
+Enabled by Default: Yes
+Status: Disabled
+Deactivation reason: Did not fulfill its Prerequisites:
+   -No encryption properties was found in available messages
+
+Name: ErrorSubscribers
+Version: 5.2.8
+Enabled by Default: Yes
+Status: Enabled
+Dependencies: None
+Startup Tasks: None
+
+Name: ForwarderFaultManager
+Version: 5.2.8
+Enabled by Default: Yes
+Status: Enabled
+Dependencies: None
+Startup Tasks: None
+
+Name: InMemoryFaultManager
+Version: 5.2.8
+Enabled by Default: No
+Status: Disabled
+Deactivation reason: Did not meet one of the dependencies: 
+
+Name: InstallationSupport
+Version: 5.2.8
+Enabled by Default: Yes
+Status: Enabled
+Dependencies: None
+Startup Tasks: None
+
+Name: CriticalTimeMonitoring
+Version: 5.2.8
+Enabled by Default: No
+Status: Disabled
+Deactivation reason: Did not meet one of the dependencies: 
+
+Name: Audit
+Version: 5.2.8
+Enabled by Default: Yes
+Status: Enabled
+Dependencies: None
+Startup Tasks: None
+
+Name: AutoSubscribe
+Version: 5.2.8
+Enabled by Default: Yes
+Status: Enabled
+Dependencies: None
+Startup Tasks: ApplySubscriptions
+
+Name: MsmqSubscriptionPersistence
+Version: 5.2.8
+Enabled by Default: No
+Status: Disabled
+Deactivation reason: Did not meet one of the dependencies: 
+
+Name: Scheduler
+Version: 5.2.8
+Enabled by Default: Yes
+Status: Enabled
+Dependencies: None
+Startup Tasks: None
+
+Name: CustomSerialization
+Version: 5.2.8
+Enabled by Default: Yes
+Status: Disabled
+Deactivation reason: Did not fulfill its Prerequisites:
+   -CustomSerialization not enable since serialization definition not detected.
+
+Name: ForwardReceivedMessages
+Version: 5.2.8
+Enabled by Default: Yes
+Status: Disabled
+Deactivation reason: Did not fulfill its Prerequisites:
+   -No forwarding address was defined in the unicastbus config
+
+Name: RegisterHandlersInOrder
+Version: 5.2.8
+Enabled by Default: Yes
+Status: Enabled
+Dependencies: None
+Startup Tasks: None
+
+Name: SLAMonitoring
+Version: 5.2.8
+Enabled by Default: No
+Status: Disabled
+Deactivation reason: Did not meet one of the dependencies: 
+
+Name: LicenseReminder
+Version: 5.2.8
+Enabled by Default: Yes
+Status: Enabled
+Dependencies: None
+Startup Tasks: None
+
+Name: Outbox
+Version: 5.2.8
+Enabled by Default: No
+Status: Disabled
+Deactivation reason: Did not meet one of the dependencies: 
+
+Name: InMemoryGatewayPersistence
+Version: 5.2.8
+Enabled by Default: No
+Status: Disabled
+Deactivation reason: Did not meet one of the dependencies: [Gateway]
+
+Name: InMemoryOutboxPersistence
+Version: 5.2.8
+Enabled by Default: No
+Status: Disabled
+Deactivation reason: Did not meet one of the dependencies: [Outbox]
+
+Name: InMemorySagaPersistence
+Version: 5.2.8
+Enabled by Default: No
+Status: Disabled
+Deactivation reason: Did not meet one of the dependencies: [Sagas]
+
+Name: InMemorySubscriptionPersistence
+Version: 5.2.8
+Enabled by Default: No
+Status: Disabled
+Deactivation reason: Did not meet one of the dependencies: [MessageDrivenSubscriptions]
+
+Name: InMemoryTimeoutPersistence
+Version: 5.2.8
+Enabled by Default: No
+Status: Disabled
+Deactivation reason: Did not meet one of the dependencies: [TimeoutManager]
+
+Name: TimeoutManagerBasedDeferral
+Version: 5.2.8
+Enabled by Default: No
+Status: Enabled
+Dependencies: None
+Startup Tasks: None
+
+Name: UnicastBus
+Version: 5.2.8
+Enabled by Default: Yes
+Status: Enabled
+Dependencies: None
+Startup Tasks: None
+
+Name: BinarySerialization
+Version: 5.2.8
+Enabled by Default: Yes
+Status: Disabled
+Deactivation reason: Did not fulfill its Prerequisites:
+   -BinarySerialization not enable since serialization definition not detected.
+
+Name: BsonSerialization
+Version: 5.2.8
+Enabled by Default: Yes
+Status: Disabled
+Deactivation reason: Did not fulfill its Prerequisites:
+   -BsonSerialization not enable since serialization definition not detected.
+
+Name: JsonSerialization
+Version: 5.2.8
+Enabled by Default: Yes
+Status: Enabled
+Dependencies: None
+Startup Tasks: None
+
+Name: XmlSerialization
+Version: 5.2.8
+Enabled by Default: Yes
+Status: Disabled
+Deactivation reason: Did not fulfill its Prerequisites:
+   -XmlSerialization not enable since serialization definition not detected.
+
+Name: MsmqTransportConfigurator
+Version: 5.2.8
+Enabled by Default: No
+Status: Enabled
+Dependencies: None
+Startup Tasks: None
+
+Name: TimeoutManager
+Version: 5.2.8
+Enabled by Default: No
+Status: Enabled
+Dependencies: [TimeoutManagerBasedDeferral]
+Startup Tasks: None
+
+Name: Sagas
+Version: 5.2.8
+Enabled by Default: Yes
+Status: Disabled
+Deactivation reason: Did not fulfill its Prerequisites:
+   -No sagas was found in scanned types
+
+Name: SecondLevelRetries
+Version: 5.2.8
+Enabled by Default: Yes
+Status: Enabled
+Dependencies: [ForwarderFaultManager]
+Startup Tasks: None
+
+Name: DataBusFileBased
+Version: 5.2.8
+Enabled by Default: No
+Status: Disabled
+Deactivation reason: Did not meet one of the dependencies: [DataBus]
+
+Name: StorageDrivenPublishing
+Version: 5.2.8
+Enabled by Default: No
+Status: Enabled
+Dependencies: None
+Startup Tasks: None
+
+Name: MessageDrivenSubscriptions
+Version: 5.2.8
+Enabled by Default: No
+Status: Enabled
+Dependencies: None
+Startup Tasks: None
+
+Name: NHibernateGatewayDeduplication
+Version: 6.2.5
+Enabled by Default: No
+Status: Disabled
+Deactivation reason: Did not meet one of the dependencies: [Gateway]
+
+Name: NHibernateDBConnectionProvider
+Version: 6.2.5
+Enabled by Default: No
+Status: Enabled
+Dependencies: None
+Startup Tasks: None
+
+Name: NHibernateOutboxStorage
+Version: 6.2.5
+Enabled by Default: No
+Status: Disabled
+Deactivation reason: Did not meet one of the dependencies: [Outbox]
+
+Name: NHibernateSagaStorage
+Version: 6.2.5
+Enabled by Default: No
+Status: Disabled
+Deactivation reason: Did not meet one of the dependencies: [Sagas]
+
+Name: NHibernateStorageSession
+Version: 6.2.5
+Enabled by Default: No
+Status: Enabled
+Dependencies: [NHibernateDBConnectionProvider]
+Startup Tasks: None
+
+Name: NHibernateSubscriptionStorage
+Version: 6.2.5
+Enabled by Default: No
+Status: Enabled
+Dependencies: [StorageDrivenPublishing]
+Startup Tasks: None
+
+Name: NHibernateTimeoutStorage
+Version: 6.2.5
+Enabled by Default: No
+Status: Enabled
+Dependencies: [TimeoutManager],[NHibernateDBConnectionProvider]
+Startup Tasks: None
+
+Name: RavenDbGatewayDeduplication
+Version: 3.0.6
+Enabled by Default: No
+Status: Disabled
+Deactivation reason: Did not meet one of the dependencies: [Gateway]
+
+Name: RavenDbSagaStorage
+Version: 3.0.6
+Enabled by Default: No
+Status: Disabled
+Deactivation reason: Did not meet one of the dependencies: [Sagas]
+
+Name: RavenDbSubscriptionStorage
+Version: 3.0.6
+Enabled by Default: No
+Status: Disabled
+Deactivation reason: Did not meet one of the dependencies: [StorageDrivenPublishing],[SharedDocumentStore]
+
+Name: RavenDbTimeoutStorage
+Version: 3.0.6
+Enabled by Default: No
+Status: Disabled
+Deactivation reason: Did not meet one of the dependencies: [TimeoutManager],[SharedDocumentStore]
+
+Name: SharedDocumentStore
+Version: 3.0.6
+Enabled by Default: No
+Status: Disabled
+Deactivation reason: Did not meet one of the dependencies: 
+
+Name: RavenDbStorageSession
+Version: 3.0.6
+Enabled by Default: No
+Status: Disabled
+Deactivation reason: Did not meet one of the dependencies: [RavenDbSagaStorage,RavenDbOutboxStorage]
+
+Name: RavenDbOutboxStorage
+Version: 3.0.6
+Enabled by Default: No
+Status: Disabled
+Deactivation reason: Did not meet one of the dependencies: [Outbox],[SharedDocumentStore]
+
+Name: RabbitMqTransport
+Version: 3.0.1
+Enabled by Default: No
+Status: Disabled
+Deactivation reason: Did not meet one of the dependencies: 
+
+
+2015-12-04 17:35:49.096 INFO  NServiceBus.Satellites.SatelliteLauncher Started 1/3 NServiceBus.Timeout.Hosting.Windows.TimeoutMessageProcessor, NServiceBus.Core, Version=5.0.0.0, Culture=neutral, PublicKeyToken=9fc386479f8a226c satellite
+2015-12-04 17:35:49.106 INFO  NServiceBus.Satellites.SatelliteLauncher Started 2/3 NServiceBus.Timeout.Hosting.Windows.TimeoutDispatcherProcessor, NServiceBus.Core, Version=5.0.0.0, Culture=neutral, PublicKeyToken=9fc386479f8a226c satellite
+2015-12-04 17:35:49.113 INFO  NServiceBus.Satellites.SatelliteLauncher Started 3/3 NServiceBus.SecondLevelRetries.SecondLevelRetriesProcessor, NServiceBus.Core, Version=5.0.0.0, Culture=neutral, PublicKeyToken=9fc386479f8a226c satellite
+2015-12-04 17:35:49.195 INFO  NServiceBus.Unicast.Subscriptions.MessageDrivenSubscriptions.SubscriptionManager Subscribing to Shared.MyEvent, Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null at publisher queue subscriber2@IE3BLT3VZ1N62
+2015-12-04 17:35:51.517 INFO  NServiceBus.SubscriptionReceiverBehavior Subscribing Subscriber2@IE3BLT3VZ1N62 to message type Shared.MyEvent, Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
